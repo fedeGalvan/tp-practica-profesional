@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import "./sass/Header.scss";
 import Landing from "./Landing";
 

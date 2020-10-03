@@ -20,6 +20,7 @@ const Imagen = ({ imagen }) => {
                <img
                   src={imagen.webformatURL}
                   className="img-fluid img-thumbnail"
+                  alt={imagen.user}
                ></img>
             </a>
          </div>

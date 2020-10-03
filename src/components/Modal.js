@@ -3,8 +3,16 @@ import { Modal } from "react-bootstrap";
 import "./sass/Modal.scss";
 
 const ModalImg = ({ imagen, isOpen, onToggle }) => {
-   const { largeImageURL, likes, tags, user, userImageURL, user_id } = imagen;
-   const userLink = `https://pixabay.com/users/${user}-${user_id}/`;
+   const {
+      largeImageURL,
+      likes,
+      tags,
+      user,
+      userImageURL,
+      user_id,
+      id,
+   } = imagen;
+   const userLink = `https://www.pixabay.com/users/${user}-${user_id}/`;
 
    return (
       <Fragment>
@@ -23,7 +31,7 @@ const ModalImg = ({ imagen, isOpen, onToggle }) => {
                            : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQP-i5liksKo3g85Qz90jpYieJ4J_YGy5S7JQ&usqp=CAU"
                      }
                   ></img>
-                  <a href={userLink} target="_blank">
+                  <a href={userLink} target="_blank" rel="noopener noreferrer">
                      <p>{user}</p>
                   </a>
                </Modal.Title>
@@ -35,7 +43,6 @@ const ModalImg = ({ imagen, isOpen, onToggle }) => {
                <div className="tags">
                   <p>Tambien podrías buscar: {tags}</p>
                </div>
-               {/* <button onClick={() => download()}>asd</button> */}
             </Modal.Footer>
          </Modal>
       </Fragment>

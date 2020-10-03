@@ -25,21 +25,13 @@ const Paginador = ({ page, setPage, totalPages, element }) => {
    }
 
    return (
-      <div className="paginador">
+      <div className='paginador'>
          <Pagination>
             <Pagination.First onClick={() => setPage(1)} />
             <Pagination.Prev onClick={() => backPage()} />
-            {page === 1 ? null : (
-               <Pagination.Item onClick={() => backPage()}>
-                  {page - 1}
-               </Pagination.Item>
-            )}
+            {page === 1 ? null : <Pagination.Item onClick={() => backPage()}>{page - 1}</Pagination.Item>}
             <Pagination.Item active>{page}</Pagination.Item>
-            {page === totalPages ? null : (
-               <Pagination.Item onClick={() => nextPage()}>
-                  {page + 1}
-               </Pagination.Item>
-            )}
+            {page === totalPages ? null : <Pagination.Item onClick={() => nextPage()}>{page + 1}</Pagination.Item>}
             <Pagination.Next onClick={() => nextPage()} />
             <Pagination.Last onClick={() => setPage(totalPages)} />
          </Pagination>

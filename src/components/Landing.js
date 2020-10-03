@@ -5,18 +5,16 @@ import { Button, InputGroup, Form, FormControl } from "react-bootstrap";
 import Gallery from "./Gallery";
 import Paginador from "./Paginador";
 
-const Landing = ({ filter }) => {
+const Landing = () => {
    const [inputValue, setInputValue] = useState("");
    const [search, setSearch] = useState("");
    const [galeria, setGaleria] = useState([]);
-   const [recomendaciones, setRecomendaciones] = useState(
-      "Nuestras recomendaciones",
-   );
+   const [recommendations, setRecommendations] = useState("Nuestras recomendaciones");
    const [imgPerPage, setImgPerPage] = useState(48);
    const [page, setPage] = useState(1);
    const [totalPages, setTotalPages] = useState(1);
 
-   const element = document.querySelector("#recomedaciones");
+   const element = document.querySelector("#recommendations");
 
    useEffect(() => {
       async function ApiCall() {
@@ -29,61 +27,52 @@ const Landing = ({ filter }) => {
          setTotalPages(calcTotalPages);
       }
       ApiCall();
-   }, [search, page, filter]);
+   }, [search, page, imgPerPage]);
 
-   function buscar(e) {
+   function find(e) {
       e.preventDefault();
-      const input = document.querySelector("#buscar");
+      const input = document.querySelector("#find");
       setSearch(inputValue);
-      setRecomendaciones("Nuestras recomendaciones para " + inputValue);
+      setRecommendations(`Nuestras recomendaciones para "${inputValue}" `);
       input.value = "";
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+         behavior: "smooth",
+      });
       setPage(1);
    }
 
    return (
       <Fragment>
-         <div className="container-fluid">
-            <Form
-               inline
-               className="landing__search"
-               onSubmit={(e) => buscar(e)}
-            >
-               <div className="tags">
+         <div className='container-fluid'>
+            <Form inline className='landing__search' onSubmit={(e) => find(e)}>
+               <div className='tags'>
                   Más populares:
-                  <p>fondo</p>,<p>wallpaper</p>,<p>naturaleza</p>,<p>comida</p>,
-                  <p>negocios</p>,<p>oficina</p>,<p>computadora</p>,
-                  <p>escuela</p>,<p>dinero</p>,<p>perro</p>,<p>cielo</p>,
-                  <p>flores</p>,<p>amor</p>
+                  <p>fondo</p>,<p>wallpaper</p>,<p>naturaleza</p>,<p>comida</p>,<p>negocios</p>,<p>oficina</p>,
+                  <p>computadora</p>,<p>escuela</p>,<p>dinero</p>,<p>perro</p>,<p>cielo</p>,<p>flores</p>,<p>amor</p>
                </div>
                <InputGroup>
                   <FormControl
-                     placeholder="Explorar"
-                     id="buscar"
-                     autoComplete="off"
+                     placeholder='Explorar'
+                     id='find'
+                     autoComplete='off'
                      onChange={(e) => setInputValue(e.target.value)}
                   />
                   <InputGroup.Append>
-                     <Button id="search" type="submit">
+                     <Button id='search' type='submit'>
                         <FaSearch></FaSearch>
                      </Button>
                   </InputGroup.Append>
                </InputGroup>
             </Form>
          </div>
-         <h2 id="recomedaciones">
-            <span id="recSpan">{recomendaciones}</span>
+         <h2 id='recommendations'>
+            <span>{recommendations}</span>
          </h2>
-         <div className="container">
+         <div className='container'>
             <Gallery galeria={galeria} />
          </div>
 
-         <Paginador
-            page={page}
-            setPage={setPage}
-            totalPages={totalPages}
-            element={element}
-         />
+         <Paginador page={page} setPage={setPage} totalPages={totalPages} element={element} />
       </Fragment>
    );
 };
