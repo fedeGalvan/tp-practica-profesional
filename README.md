@@ -1,7 +1,7 @@
 
 ## `Live Demo`
 
-** If you follow this link you can see the proyect **<br />
+**If you follow this link you can see the proyect** <br />
 link.netlify.app
 
 
