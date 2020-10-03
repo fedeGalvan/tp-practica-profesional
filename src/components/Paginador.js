@@ -9,24 +9,21 @@ const Paginador = ({ page, setPage, totalPages, element }) => {
 
    function nextPage() {
       if (page >= totalPages) {
-         scrollIntoView();
          return;
       } else {
-         scrollIntoView();
          setPage(page + 1);
       }
    }
 
    function backPage() {
       if (page !== 1) {
-         scrollIntoView();
          setPage(page - 1);
       }
    }
 
    return (
-      <div className='paginador'>
-         <Pagination>
+      <div className='paginator'>
+         <Pagination onClick={scrollIntoView()}>
             <Pagination.First onClick={() => setPage(1)} />
             <Pagination.Prev onClick={() => backPage()} />
             {page === 1 ? null : <Pagination.Item onClick={() => backPage()}>{page - 1}</Pagination.Item>}
