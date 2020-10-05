@@ -2,7 +2,8 @@
 ## `Live Demo`
 
 **If you follow this link you can see the proyect ``live``** <br />
-link.netlify.app
+
+https://tp1-practicaprofesional.netlify.app/
 
 
 ## `How to run this project`
