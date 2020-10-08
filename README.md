@@ -9,9 +9,9 @@ https://tp1-practicaprofesional.netlify.app/
 ## `How to run this project`
 1) Install Node js.
 2) Navigate to the project directory.
-3) In your console run `npm start`.
-4) The project would open in localhost:3000
-
+3) In your console run `npm install`.
+4) After that eternity, run `npm start`.
+5) Programm should open in `localhost:3000`
 
 ### `npm run build`
 
