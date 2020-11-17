@@ -9,19 +9,19 @@ https://tp1-practicaprofesional.netlify.app/
 ## `How to run this project`
 1) Install Node js.
 
-1.1) Install git.
+2) Install git.
 
-1) In terminal: navigate to a new folder.
+3) In terminal: navigate to a new folder.
 
-1.1) Clone this repository with the following command: `git clone https://github.com/fedeGalvan/tp-practica-profesional`
+4) Clone this repository with the following command: `git clone https://github.com/fedeGalvan/tp-practica-profesional`
 
-2.2) Navigate to the project directory: .../tp-practica-profesional.
+5) Navigate to the project directory: .../tp-practica-profesional.
 
-3) In your console run `npm install`.
+6) In your console run `npm install`.
 
-4) After that eternity, run `npm start`.
+7) After that eternity, run `npm start`.
 
-5) Programm should open in `localhost:3000`
+8) Programm should open in `localhost:3000`
 
 ### `npm run build`
 
